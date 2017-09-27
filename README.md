@@ -1,1 +1,1 @@
-# coursera-parallel-concurrent-distributed-java
+This repository contains my personal notes and any other resources that I'm creating while I go through the [Parallel, Concurrent and Distributed Programming in Java](https://www.coursera.org/specializations/pcdp) specialisation on Coursera.
