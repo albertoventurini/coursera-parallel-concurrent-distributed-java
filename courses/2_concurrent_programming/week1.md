@@ -87,7 +87,7 @@ synchronized void produce() {
 
 ```
 
-A lock that provides wait/notify functionalities is also called [`monitor`](https://en.wikipedia.org/wiki/Monitor_(synchronization)).
+A lock that provides wait/notify functionalities is also called [*monitor*](https://en.wikipedia.org/wiki/Monitor_(synchronization)).
 
 # Unstructured locks
 
