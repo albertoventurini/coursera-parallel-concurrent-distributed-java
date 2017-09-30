@@ -87,6 +87,8 @@ synchronized void produce() {
 
 ```
 
+A lock that provides wait/notify functionalities is also called [`monitor`](https://en.wikipedia.org/wiki/Monitor_(synchronization)).
+
 # Unstructured locks
 
 Unstructured locks are explicit lock objects (as opposed to implicit locks). They are unstructured because you don't use the `synchronized` statement in this case.
