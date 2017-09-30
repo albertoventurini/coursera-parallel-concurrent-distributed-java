@@ -2,7 +2,7 @@
 
 [Threads](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html) have been part of the Java language since its inception.
 
-In order to create a new thread, you instantiate a new `Thread` object. In its constructor, you pass a `Runnable`, which represents the action to execute when the thread starts.
+**Thread creation**. In order to create a new thread, you instantiate a new `Thread` object. In its constructor, you pass a `Runnable`, which represents the action to execute when the thread starts.
 
 For example:
 ```
@@ -14,7 +14,7 @@ Thread t = new Thread(new Runnable() {
 });
 ```
 
-In order to start a thread, use `t.start()`. In order to wait for a thread to finish, use `t.join()`. The `join` operation ensures a *happens-before* relationship between the terminating thread and the thread that it's joining into. This means that if we call `t.join()` on thread `t`, we ensure that all statements in thread `t` will be executed before the `join` call terminates.
+**Starting threads**. In order to start a thread, use `t.start()`. In order to wait for a thread to finish, use `t.join()`. The `join` operation ensures a *happens-before* relationship between the terminating thread and the thread that it's joining into. This means that if we call `t.join()` on thread `t`, we ensure that all statements in thread `t` will be executed before the `join` call terminates.
 
 All Java programs execute in threads, therefore there's a default thread that gets created whenever a new program runs.
 
@@ -71,7 +71,7 @@ Key points to take away:
 
 ## Guarded blocks
 
-In some occasions a thread must wait until a certain condition is true, before proceeding with its operations. In Java this is achieved by using `wait` / `nofifyAll` operations. E.g. (in pseudocode):
+Sometimes a thread must wait until a certain condition is true, before proceeding with its operations. In Java this is achieved by using the `wait` / `nofifyAll` operations. E.g. (in pseudocode):
 ```
 synchronized void consume() {
   while(!elements) {
