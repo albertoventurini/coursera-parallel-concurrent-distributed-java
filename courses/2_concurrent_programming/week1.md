@@ -122,7 +122,7 @@ Some of the factors that prevent liveness:
 
 # Dining philosophers
 
-The dining philosophers problem [wikipedia](https://en.wikipedia.org/wiki/Dining_philosophers_problem) models *n* philosophers sitting at a round table and alternating between thinking and eating. It's a problem that exposes potential liveness pitfalls. I.e. can we find an eating protocol that ensures that all philosophers get a chance eat?
+The dining philosophers problem ([wikipedia](https://en.wikipedia.org/wiki/Dining_philosophers_problem)) models *n* philosophers sitting at a round table and alternating between thinking and eating. It's a problem that exposes potential liveness pitfalls. I.e. can we find an eating protocol that ensures that all philosophers get a chance eat?
 
 ## Using structured locks
 
