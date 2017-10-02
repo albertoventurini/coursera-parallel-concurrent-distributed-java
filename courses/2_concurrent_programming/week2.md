@@ -20,4 +20,4 @@ class Account {
 
 A critical section ensures *atomicity*. In the example above, the two operations of reading the current amount of `balance` and writing back the updated amount are conflated into an atomic operation; that is, both operations (read and write) must be finished before another thread can access the critical section. As far as other threads are concerned, they are effectively one, single, atomic operation.
 
-A critical section ensures *mutual exclusive* access to resources. In the example above, the `balance` resource is access to at most one thread at a time.
+A critical section ensures *mutual exclusive* access to resources. In the example above, the `balance` resource is accessed to at most one thread at a time.
