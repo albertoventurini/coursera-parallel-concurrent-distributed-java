@@ -63,7 +63,7 @@ Object-based isolation can be implemented by using locks, but it's often challen
 
 ## Relationship with monitors
 
-Previously we defined a monitor as a lock that provides wait/notify functionalities. However a monitor is also defined as a class whose methods are executed in mutual exclusion (e.g. all methods are wrapped with an `isolated` block). This is akin to saying that all methods in a monitor provide object-based isolation with a singleton list which contains the monitor itself. For example, monitor `M1` might be:
+Previously we defined a monitor as a lock that provides wait/notify functionalities. However a monitor is also defined as a class whose methods are executed in mutual exclusion (e.g. all methods are wrapped with an `isolated` block). This is akin to saying that all methods in a monitor provide object-based isolation with a singleton list containing the monitor itself. For example, monitor `M1` might be:
 
 ```
 Monitor M1 {
