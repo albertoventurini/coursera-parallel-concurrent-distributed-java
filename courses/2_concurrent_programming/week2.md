@@ -81,6 +81,50 @@ Wikipedia article on monitors: https://en.wikipedia.org/wiki/Monitor_(synchroniz
 
 # Concurrent spanning tree algorithm
 
+In this section we look at a parallel depth-first algorithm on a graph G that is used to calculate the *spanning tree* of G. We'll see that we can apply object-based isolation in order to avoid race conditions.
+
+The sequential depth-first algorithm to calculate the spanning tree is:
+
+```
+compute(v) {
+  for all neighbors c of v {
+    s = makeParent(v, c)
+    if(s) compute(c)
+  }
+}
+
+makeParent(v,c) {
+  if(c.parent == null) {
+    c.parent = v
+    success = true
+  } else success = false
+  return success
+}
+```
+
+In order to parallelize the algorithm, we execute each recursive call in a separate thread. However, this opens up potential data races in the `makeParent` method, as we manipulate the value of `c.parent`. Thus we need to ensure mutual exclusion when we access `c`. We do that with object-based isolation:
+
+```
+compute(v) {
+  for all neighbors c of v {
+    s = makeParent(v, c)
+    if(s) new Thread(compute(c)) // parallel recursion
+  }
+}
+
+makeParent(v,c) {
+  isolated(c) { // object-based isolation on c
+    if(c.parent == null) {
+      c.parent = v
+      success = true
+    } else success = false
+  }
+  return success
+}
+```
+
+Wikipedia article on [spannin tree](https://en.wikipedia.org/wiki/Spanning_tree).
+
 # Atomic variables
 
 # Read/write isolation
