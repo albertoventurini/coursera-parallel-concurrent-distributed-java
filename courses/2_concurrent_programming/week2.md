@@ -123,7 +123,7 @@ makeParent(v,c) {
 }
 ```
 
-Wikipedia article on [spannin tree](https://en.wikipedia.org/wiki/Spanning_tree).
+Wikipedia article on [spanning tree](https://en.wikipedia.org/wiki/Spanning_tree).
 
 # Atomic variables
 
