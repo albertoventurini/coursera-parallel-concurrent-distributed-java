@@ -24,10 +24,10 @@ A critical section ensures *mutual exclusive* access to resources. In the exampl
 
 # Object-based isolation
 
-Object-based isolation is a generalization of the `isolated` construct. With object-based isolation you can specify a list of objects that will be accessed in the critical section.
+Object-based isolation is a generalization of the `isolated` construct which was introduced in the previous section. Object-based isolation allows you to specify a list of objects whose access must be mutually exclusive.
 
-- if two threads try to access isolation sections with an empty intersection of objects, they can proceed in parallel;
-- if two threads try to access isolation sections with a non-empty intersection of objects, they can't proceed in parallel.
+- If two threads try to access object-based isolation sections with an empty intersection of objects, they can proceed in parallel;
+- if two threads try to access object-based isolation sections with a non-empty intersection of objects, they can't proceed in parallel.
 
 For example, suppose you're developing a thread-safe doubly linked list. When you're deleting a node you'll be modifying the pointers of the previous and next node:
 
@@ -38,7 +38,7 @@ void delete(Node n) {
 }
 ```
 
-In order to make it thread-safe, we can use object-based isolation:
+In order to make it thread-safe, we can use object-based isolation and specify the nodes that require mutual-exclusive access:
 
 ```
 void delete(Node n) {
@@ -50,6 +50,14 @@ void delete(Node n) {
 ```
 
 This is better than just using a critical section, because two threads can proceed in parallel if the `delete` operations don't interfere with each other.
+
+E.g. given the following list:
+
+```
+N1 - N2 - N3 - N4 - N5 - N6
+```
+
+two threads can delete nodes N2 and N5 in parallel.
 
 ## Relationship with monitors
 
