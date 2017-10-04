@@ -59,6 +59,8 @@ N1 - N2 - N3 - N4 - N5 - N6
 
 two threads can delete nodes N2 and N5 in parallel.
 
+Object-based isolation can be implemented by using locks, but it's often challenging to do it correctly with locks without incurring in some liveness issues.
+
 ## Relationship with monitors
 
 Previously we defined a monitor as a lock that provides wait/notify functionalities. However a monitor is also defined as a class whose methods are executed in mutual exclusion (e.g. all methods are wrapped with an `isolated` block). This is akin to saying that all methods in a monitor provide object-based isolation with a singleton list which contains the monitor itself. For example, monitor `M1` might be:
@@ -67,7 +69,7 @@ Previously we defined a monitor as a lock that provides wait/notify functionalit
 Monitor M1 {
 
   void doSomething() {
-    isolated(M1) {
+    isolated(M1) { // singleton list
       // ...
     }
   }
@@ -75,7 +77,7 @@ Monitor M1 {
 }
 ```
 
-Object-based isolation can be implemented by using locks, but it's often challenging to do it correctly with locks without incurring in some liveness issues.
+Wikipedia article on monitors: https://en.wikipedia.org/wiki/Monitor_(synchronization)
 
 # Concurrent spanning tree algorithm
 
