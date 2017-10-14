@@ -4,3 +4,4 @@ This repository contains my personal notes and any other resources that I'm crea
 
 - [week1](courses/2_concurrent_programming/week1.md)
 - [week2](courses/2_concurrent_programming/week2.md)
+- [week3](courses/2_concurrent_programming/week3.md)
