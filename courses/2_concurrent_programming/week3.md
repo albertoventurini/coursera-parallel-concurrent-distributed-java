@@ -9,7 +9,7 @@ An actor has three components:
 
 The main benefit of actors is that the state can only be accessed by the actor owning it. This is in contrast with traditional object-oriented programming, where the state is class-private but not thread-private (meaning that multiple threads share the same state), thus access to the shared state must be protected with mechanisms such as locks and isolated sections.
 
-The only way to modify an object in a pure actor model is to send messages to the actor that owns that object as part of its local state. Therefore, there's no need for locks and isolated sections when working with actors.
+The only way to modify an object in a pure actor model is by sending messages to the actor that owns that object as part of its local state. Therefore, there's no need for locks and isolated sections when working with actors.
 
 Actors interact with each other by passing messages. Upon receiving a message, an actor can:
 * change its local state
