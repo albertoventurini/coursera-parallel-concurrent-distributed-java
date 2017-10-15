@@ -41,3 +41,15 @@ process(s) {
 ## Pipelines
 
 Actors can be used to implement processing pipelines. For example, we can have two actors in a pipeline chain: the first actor allows only lower-case strings to go through, while the second actor allows only even-length strings. The first actor receives a string from the rest of the world and, if the string is lower-case, it sends it to the second actor. The second actor accepts the string and, if its length is even, it sends it to the rest of the world.
+
+# Sieve of Eratosthenes
+
+The algorithm known as sieve of Eratosthenes is used to compute the prime numbers between 2 and N. It works by repeatedly filtering out all the multiples of prime numbers from the list 2..N.
+
+An actor implementation of this algorithm can work as follows.
+
+We start with an initial actor, "Non-mul 2", that accepts the initial list 2..N. Upon receiving the list, it prints the first number, 2, then it filters out all the numbers that are multiple of 2. The next number remaining in the list is 3, then the actor creates a new actor, "Non-mul 3", and passes the filtered list to this new actor. The new actor implements the same logic as the first, this time filtering out multiples of 3.
+
+This example illustrates that actor pipelines can grow dynamically.
+
+
