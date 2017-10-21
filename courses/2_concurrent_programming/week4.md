@@ -38,6 +38,10 @@ This approach can have better performance than locks, isolations or actors if th
 
 # Concurrent queue
 
+This lecture provides a basic sketch of how optimistic concurrency might be used to implement a concurrent queue. The pattern is similar to the AtomicInteger class above. In this case, the `compareAndSet` operation is performed on `AtomicReference` objects such as `head` and `tail`.
+
+Every operation that reads or writes to a pointer must be protected from data races. It is possible to do that with optimistic concurrency but it is not as trivial as using locks, isolation or actors.
+
 # Linearizability
 
 # Concurrent hash map
