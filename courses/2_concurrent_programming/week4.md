@@ -29,7 +29,12 @@ AtomicInteger {
 }
 ```
 
-This approach doesn't suffer from liveness issues, i.e. it's not possible for a thread to spin forever in the while loop without making any progress.
+This approach doesn't suffer from liveness issues:
+
+* no deadlocks because it doesn't block on anything
+* no livelocks because it's not possible for a thread to spin forever in the while loop without making any progress.
+
+This approach can have better performance than locks, isolations or actors if the contention on a shared object is not high.
 
 # Concurrent queue
 
