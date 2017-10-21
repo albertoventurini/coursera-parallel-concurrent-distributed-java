@@ -44,6 +44,12 @@ Every operation that reads or writes to a pointer must be protected from data ra
 
 # Linearizability
 
+Linearizability is a correctness property for concurrent data structures. Given n threads operating on a concurrent data structure in parallel, what are the permissible end statuses? Linearizability answers this question.
+
+For example, suppose you have a concurrent queue that supports operations `enqueue()` and `dequeue()`. You have threads T1 and T2 operating on the same concurrent queue. Thread T1 calls `enqueue(x)` and thread T2 calls `enqueue(y)`. What are the possible outcomes of calling `dequeue()`?
+
+Both x and y are valid results. The answer depends on which enqueue operation completed first, but in either case the history of operations is linearizable (i.e. the sequence of operations leads to a valid outcome). Therefore the concurrent queue is linearizable.
+
 # Concurrent hash map
 
 # Concurrent minimum spanning tree algorithm
