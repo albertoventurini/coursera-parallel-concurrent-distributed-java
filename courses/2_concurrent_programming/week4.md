@@ -52,4 +52,8 @@ Both x and y are valid results. The answer depends on which enqueue operation co
 
 # Concurrent hash map
 
+The `ConcurrentHashMap` class implements a thread-safe version of `HashMap`. It supports the usual Map operations such as `get()` and `put()`. Additionally, it provides specific operations such as `putIfAbsent()`.
+
+Operations such as `get()`, `put()` and `putIfAbsent()` are linearizable, while other aggregate operations such as `clear()` and `putAll()` are not linearizable.
+
 # Concurrent minimum spanning tree algorithm
