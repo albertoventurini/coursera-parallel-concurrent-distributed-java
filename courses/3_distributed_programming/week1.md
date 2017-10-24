@@ -9,7 +9,7 @@ The map-reduce framework is composed of:
 * a `grouping` stage which groups together intermediate keys with the same value
 * a `reduce` function which transforms the intermediate key-value pairs in the final output.
 
-## Mapping
+### Mapping
 
 The input to a map-reduce computation is a collection of key-value pairs. Most data can be thought of as a collection of key-value pairs, e.g. files can be represented as key = file name, value = file content.
 
@@ -21,7 +21,7 @@ For each key-value pair *(kA, vA)*, the framework applies a `map` function that 
 
 The intermediate keys need not be in the same space as the initial key.
 
-## Grouping
+### Grouping
 
 The grouping stage collapses keys that have the same value. E.g. if *kA1* == *kA2* == *k*, then
 
@@ -29,7 +29,7 @@ The grouping stage collapses keys that have the same value. E.g. if *kA1* == *kA
 [ (kA1, vA1), (kA2, vA2), ... (kAn, vAn) ] --> grouping --> [ (k, [vA1, vA2]), ... ]
 ```
 
-## Reduce
+### Reduce
 
 The framework applies the `reduce` function to intermediate values with the same key. E.g.:
 
