@@ -29,7 +29,7 @@ The grouping stage collapses all the pairs that have the same key. E.g. if *kA1*
 [ (kA1, vA1), (kA2, vA2), ... (kAn, vAn) ] --> grouping --> [ (k, [vA1, vA2]), ... ]
 ```
 
-The grouping stage produces key-value pairs where the value is a list.
+The grouping stage produces (k, v) pairs where *v* is the list of values that share the same key.
 
 ### Reduce
 
