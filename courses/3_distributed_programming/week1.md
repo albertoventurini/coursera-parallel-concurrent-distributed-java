@@ -67,6 +67,11 @@ Finally, the *reduce* function in this case is just a sum and produces the follo
 
 # Hadoop Framework
 
+*Hadoop* is an open-source implementation of the map-reduce paradigm developed by Apache. The key points of Hadoop are:
+* it allows developers to specify map and reduce functions as Java programs
+* it allows for higher-level query languages such as Hive or Pig
+* it supports fault-tolerance, i.e. if a node (server) fails its map or reduce task, the task will be executed again (this is possible because the map and reduce functions are pure functions).
+
 # Spark Framework
 
 # TF-IDF Example
