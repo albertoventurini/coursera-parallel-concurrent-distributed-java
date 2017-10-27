@@ -74,6 +74,32 @@ Finally, the *reduce* function in this case is just a sum and produces the follo
 
 # Spark Framework
 
+*Apache Spark* is similar to, but more general than, Hadoop.
+
+## In-memory computations
+
+One feature of Spark that sets it apart from Hadoop is its ability to perform in-memory computations. By contrast, Hadoop uses the disk to load and save intermediate computation results. This makes Spark significantly faster than Hadoop, but it also restricts the amount of data that can be processed on each server to the amount of memory available on the server.
+
+## Input model
+
+Spark doesn't restrict input data to be in the form of key-value pairs, but allows for a more generic representation of data based on *Resilient Distributed Dataset* (RDD).
+
+An RDD is a distributed collection on which we can perform transformations and actions. There are two ways to create an RDD:
+* by parallelizing an existing collection in a Spark program;
+* by reading it from storage (e.g. from HDFS)
+
+RDDs are *resilient* because they support node failures transparently.
+
+RDDs are more generic than key-value pairs because they are generic collections of objects. I.e. you can put Java, Scala or Python objects into an RDD.
+
+More information on RDDs can be found on the (Spark documentation)[https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#resilient-distributed-datasets-rdds]
+
+## Data manipulation
+
+Spark provides various APIs for manipulating RDDs. These APIs are classified as:
+* Transformations (map, filter, join, ...)
+* Actions (reduce, join, collect, ...)
+
 # TF-IDF Example
 
 # Page Rank Example
